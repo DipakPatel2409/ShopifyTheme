@@ -1,0 +1,731 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_VyQUcA": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_QYG8Yn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/infashion-1703235936.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_FBytjy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Neutral_Minimalist_Luxury_Fashion_Business_Facebook_Cover.png",
+            "heading": "",
+            "heading_size": "h2",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_qrrbhC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Beige_Elegant_Fashion_Brand_Website_Homepage_Banner.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_MV9TPV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Gray_Minimalist_New_Collection_Banner.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_QYG8Yn",
+        "slide_FBytjy",
+        "slide_qrrbhC",
+        "slide_MV9TPV"
+      ],
+      "custom_css": [
+        ".icon-pause {display: none;}"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "collection_list_r3Wmqp": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_TNKg7G": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "woman"
+          }
+        },
+        "featured_collection_7HQtfd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "man"
+          }
+        },
+        "featured_collection_t8Uhnb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beauty"
+          }
+        },
+        "featured_collection_LPwBpC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "new-trend"
+          }
+        },
+        "featured_collection_7zViJL": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "winter-special"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_TNKg7G",
+        "featured_collection_7HQtfd",
+        "featured_collection_t8Uhnb",
+        "featured_collection_LPwBpC",
+        "featured_collection_7zViJL"
+      ],
+      "custom_css": [],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 16,
+        "padding_bottom": 28
+      }
+    },
+    "featured_collection_W3J7Lj": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>New trend </strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "new-trend",
+        "products_to_show": 4,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_H8AMzB": {
+      "type": "featured-collection",
+      "settings": {
+        "title": " Featured Product",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "woman",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_GJnafx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MKjtAn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FREE_DELIVERY_POST_TEMPLATE.png",
+            "title": "<strong>Free Shipping</strong>",
+            "text": "<p>Delivering your favorites to your door—fast and free.</p><p></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_q4Jdxz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/images.png",
+            "title": "Secure Payments",
+            "text": "<p>Shop confidently with cutting-edge payment security.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_EkpJLz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Support_service_with_headphones._Customer_Support_service_logo_template.png",
+            "title": "Customer Support",
+            "text": "<p>We're here for you anytime, anywhere.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MKjtAn",
+        "column_q4Jdxz",
+        "column_EkpJLz"
+      ],
+      "settings": {
+        "title": "",
+        "Heading_text": "",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 32,
+        "padding_bottom": 16
+      }
+    },
+    "collection_list_gm_4mF4Gr": {
+      "type": "collection-list-gm",
+      "blocks": {
+        "collection_list_rQqXTG": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_1.jpg",
+            "collcetion_link": "shopify://collections/beauty"
+          }
+        },
+        "collection_list_RwbVHU": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/download_1.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_KhJUyB": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_2.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_wqG8pa": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_4.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_M97jyJ": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_6.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_4x7thb": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_5.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_WJFtKi": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_4.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_ecUU3H": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/download_1.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_ULFHNq": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_7.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_9CWQNB": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/city-woman-fashion_925x_2x_b1b270c0-35a6-4b21-b172-ce4570d248a3.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_JkHx6A": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_6.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_Mx4hea": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/download_1.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_cMYBjM": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_3.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_B66UL4": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_2.jpg",
+            "collcetion_link": ""
+          }
+        },
+        "collection_list_BGzcxe": {
+          "type": "collection_list",
+          "settings": {
+            "collection_img": "shopify://shop_images/images_5.jpg",
+            "collcetion_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_rQqXTG",
+        "collection_list_RwbVHU",
+        "collection_list_KhJUyB",
+        "collection_list_wqG8pa",
+        "collection_list_M97jyJ",
+        "collection_list_4x7thb",
+        "collection_list_WJFtKi",
+        "collection_list_ecUU3H",
+        "collection_list_ULFHNq",
+        "collection_list_9CWQNB",
+        "collection_list_JkHx6A",
+        "collection_list_Mx4hea",
+        "collection_list_cMYBjM",
+        "collection_list_B66UL4",
+        "collection_list_BGzcxe"
+      ],
+      "settings": {}
+    },
+    "multicolumn_eBJCjT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_EfJz3P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/round-neck-men-t-shirt-500x500.webp",
+            "title": "⭐⭐⭐⭐⭐",
+            "text": "<p><em>\"I was amazed by how quickly my order arrived! The free shipping is a huge bonus, and the product quality is top-notch. I’ll definitely be shopping here again!\"</em></p><p></p><p><strong>– Sarah J.</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_y6RmMj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/silver-color-round-neck-t-shirt.jpg",
+            "title": "⭐⭐⭐⭐⭐",
+            "text": "<p><em>\"I always worry about online payments, but this store makes it so easy and secure. I felt confident knowing my information was protected. Great experience!\"</em></p><p></p><p><strong>– Mike R.</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_y9JQWN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/im-in-shape-round-is-a-shape-t-shirt-3xl-funny.jpg",
+            "title": "⭐⭐⭐⭐⭐",
+            "text": "<p><em>\"I had a small issue with my order, but the customer support team resolved it within hours. They were friendly, professional, and efficient. Highly recommend this store!\"</em><br/>– <strong>Emily T.</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_EfJz3P",
+        "column_y6RmMj",
+        "column_y9JQWN"
+      ],
+      "settings": {
+        "title": "Our Happy Customer",
+        "Heading_text": "dsdsdsdsdsd",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "video_jBFWQG": {
+      "type": "video",
+      "settings": {
+        "heading": "Zudio Shopping Video",
+        "heading_size": "h2",
+        "enable_video_looping": true,
+        "video_url": "https://www.youtube.com/watch?v=ulCXOqi2Xjg",
+        "cover_image": "shopify://shop_images/infashion-1703235936_5e6ca4c9-435d-46dd-8ac3-880db84416fc.jpg",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 8,
+        "padding_bottom": 24
+      }
+    },
+    "featured_blog_8XK4dW": {
+      "type": "featured-blog",
+      "disabled": true,
+      "settings": {
+        "heading": "Blog posts",
+        "heading_size": "h2",
+        "blog": "news",
+        "post_limit": 2,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_jrbhtD": {
+      "type": "multirow",
+      "blocks": {
+        "row_Lhmq8T": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/young-female-models-denim_925x_35f99e20-95f1-4316-9fea-b74cb67dd30d.jpg",
+            "caption": "Style",
+            "heading": "Woman",
+            "text": "<p>You can find <em>women's jackets </em>in various <em>styles </em>that can be for different seasons and occasions. Light weight <em>jackets </em>can be practical options during summer.</p>",
+            "button_label": "Shop now",
+            "button_link": "shopify://products/dark-denim-top"
+          }
+        }
+      },
+      "block_order": [
+        "row_Lhmq8T"
+      ],
+      "settings": {
+        "image_height": "small",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "primary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-right",
+        "section_color_scheme": "scheme-1",
+        "row_color_scheme": "scheme-5",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_title_MJjNqt": {
+      "type": "custom-title",
+      "disabled": true,
+      "settings": {
+        "section_heading": "Welcome to Our Store",
+        "section_text": "This is a customizable section where you can showcase your content.",
+        "section_image": "shopify://shop_images/images_1.jpg",
+        "background_color": "#ffffff",
+        "text_color": "#000000"
+      }
+    },
+    "rich_text_brLqkd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_EFnjxM": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_BpX7HP": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_bhA6Bj": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_EFnjxM",
+        "text_BpX7HP",
+        "button_bhA6Bj"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_DLGxhV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YqEGYQ": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_9f8miy": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_KrfY3J": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        },
+        "title1_EMzjAN": {
+          "type": "title1",
+          "disabled": true,
+          "settings": {
+            "text1": "Dipak Patel"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YqEGYQ",
+        "text_9f8miy",
+        "button_KrfY3J",
+        "title1_EMzjAN"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "product_carousel_8AYJ6x": {
+      "type": "product_carousel",
+      "custom_css": [],
+      "settings": {
+        "title": "Best Selling Product",
+        "collection": "winter-special"
+      }
+    },
+    "imagecustom_6VJ4XB": {
+      "type": "imagecustom",
+      "blocks": {
+        "image_block_URmFbU": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/images_6.jpg",
+            "title": "You Like"
+          }
+        },
+        "image_block_4Xwn9P": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/man-adjusts-blue-tuxedo-bowtie_925x_09947e62-5a52-4c67-bf63-b911d52fcc39.jpg",
+            "title": "Man Fasion"
+          }
+        },
+        "image_block_3TzBDg": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify://shop_images/young-female-models-denim_925x_35f99e20-95f1-4316-9fea-b74cb67dd30d.jpg",
+            "title": "New trands"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_URmFbU",
+        "image_block_4Xwn9P",
+        "image_block_3TzBDg"
+      ],
+      "settings": {}
+    },
+    "tabsproduct_hgNeLy": {
+      "type": "tabsproduct",
+      "blocks": {
+        "collection_tab_TqX64i": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_label": "Woman",
+            "collection": "woman"
+          }
+        },
+        "collection_tab_eqDLHr": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_label": "Man Cloths",
+            "collection": "winter-special"
+          }
+        },
+        "collection_tab_nm8cUR": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_label": "New trands",
+            "collection": "new-trend"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_TqX64i",
+        "collection_tab_eqDLHr",
+        "collection_tab_nm8cUR"
+      ],
+      "settings": {
+        "heading": "Our Collection"
+      }
+    }
+  },
+  "order": [
+    "slideshow_VyQUcA",
+    "collection_list_r3Wmqp",
+    "featured_collection_W3J7Lj",
+    "featured_collection_H8AMzB",
+    "multicolumn_GJnafx",
+    "collection_list_gm_4mF4Gr",
+    "multicolumn_eBJCjT",
+    "video_jBFWQG",
+    "featured_blog_8XK4dW",
+    "multirow_jrbhtD",
+    "custom_title_MJjNqt",
+    "rich_text_brLqkd",
+    "rich_text_DLGxhV",
+    "product_carousel_8AYJ6x",
+    "imagecustom_6VJ4XB",
+    "tabsproduct_hgNeLy"
+  ]
+}

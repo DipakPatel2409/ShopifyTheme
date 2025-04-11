@@ -1,0 +1,106 @@
+{% comment %}
+  Renders a megamenu for the header.
+
+  Usage:
+  {% render 'header-mega-menu' %}
+{% endcomment %}
+<style>
+  /* Main menu styles */
+/* Main menu styles */
+.header__inline-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.list-menu--inline > li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.header__menu-item {
+  text-decoration: none;
+  color: #000; /* Adjust color to fit your design */
+  padding: 10px 15px;
+  display: block;
+}
+
+/* Submenu styles */
+.list-menu--inline > li > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.list-menu--inline > li > ul > li {
+  margin: 0;
+}
+
+.list-menu--inline > li > ul > li > a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  display: block;
+}
+
+.list-menu--inline > li > ul > li > a:hover {
+  background-color: #f5f5f5;
+}
+
+/* Show submenu on hover */
+.list-menu--inline > li:hover > ul {
+  display: block;
+}
+  .list-menu--inline > li > ul {
+  width: 700px; /* Adjust width for more items */
+  grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Flexible columns */
+}
+
+</style>
+<nav class="header__inline-menu">
+  <ul class="list-menu list-menu--inline" role="list">
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        {%- if link.links != blank -%}
+          <a href="{{ link.url }}" class="header__menu-item link focus-inset">
+            {{ link.title }}
+          </a>
+          <ul>
+            {%- for childlink in link.links -%}
+              <li>
+                <a href="{{ childlink.url }}" class="link focus-inset">
+                  {{ childlink.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- else -%}
+          <a href="{{ link.url }}" class="header__menu-item link focus-inset">
+            {{ link.title }}
+          </a>
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
+<script>
+ document.querySelectorAll('.list-menu--inline > li > a').forEach(menuItem => {
+  menuItem.addEventListener('click', function (e) {
+    const submenu = this.nextElementSibling;
+    if (submenu && submenu.tagName === 'UL') {
+      e.preventDefault(); // Prevent navigation
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
+
+
+</script>

@@ -1,0 +1,102 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<style>
+  /* Wishlist Container */
+.wishlist-container {
+  display: flex;
+  flex-wrap: wrap;  /* Ensure it wraps to the next row if there are more than 4 products */
+  justify-content: space-between;
+  gap: 5px;
+  padding-bottom:58px;
+}
+
+/* Wishlist Item Box */
+.wishlist-item {
+  width: 25%;  /* 4 items in one row (23% width + small gaps) */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.wishlist-item:hover {
+  transform: scale(1.05);  /* Add a hover effect */
+}
+
+/* Product Details Inside Box */
+.product-box {
+  text-align: center;
+}
+
+.product-image {
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.remove-wishlist-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-wishlist-btn:hover {
+  background-color: #c0392b;
+}
+
+</style>
+<div class="page-width">
+<h2>Wishlist Product222222</h2>
+  <div class="wish-row"></div>
+</div>
+<div class ="page-width">
+<div class="wishlist-container">
+  <script>
+    $(document).ready(function() {
+      var wish;  // Declare outside the loop
+
+      {% for product in collections.all.products %}
+        wish = localStorage.getItem('wishlist-{{ product.id }}');  // Retrieve product ID from localStorage
+
+        if (wish) {
+          // Append product details dynamically to the container
+          $('.wishlist-container').append(`
+            <div class="wishlist-item">
+              <div class="product-box">
+                <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
+                <h3 class="product-title">{{ product.title }}</h3>
+                <p class="product-price">{{ product.price | money }}</p>
+                <button class="remove-wishlist-btn" onclick="removeFromWishlist('{{ product.id }}')">Remove from Wishlist</button>
+              </div>
+            </div>
+          `);
+        }
+      {% endfor %}
+    });
+
+    // Remove product from wishlist and localStorage (Optional functionality)
+    function removeFromWishlist(productId) {
+      localStorage.removeItem('wishlist-' + productId);
+      location.reload();  // Reload the page to update the wishlist UI
+    }
+  </script>
+</div>
+</div>

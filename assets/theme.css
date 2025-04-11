@@ -1,0 +1,63 @@
+/* General Styles for Header Menu */
+.header__menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu-item {
+  position: relative;
+  margin: 0 15px;
+}
+
+.header__menu-item a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.header__menu-item a:focus,
+.header__menu-item a:hover {
+  color: #007acc;
+}
+
+/* Dropdown Submenu */
+.header__menu-item .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+  width: 200px;
+  z-index: 1000;
+}
+
+.header__menu-item .submenu li {
+  padding: 5px 15px;
+}
+
+.header__menu-item .submenu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.header__menu-item .submenu li a:hover {
+  background: #007acc;
+  color: #fff;
+}
+
+/* Show dropdown on click (JavaScript toggles this class) */
+.header__menu-item.show .submenu {
+  display: block;
+}
+

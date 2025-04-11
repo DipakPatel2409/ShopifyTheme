@@ -1,0 +1,152 @@
+<html>
+  <body>
+<head>
+<!-- Include jQuery (Make sure this is above Slick.js) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Slick.js -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+</head>
+
+  </body>
+</html>
+{% style %}
+    .productcarsoul .slick-track {
+  display: flex !important;
+}
+
+.productcarsoul .slick-slide {
+  float: none !important;
+  display: flex;
+  justify-content: center;
+}
+
+.heading {
+  margin-left: 450px;
+  padding-bottom: 54px;
+}
+
+.slick-prev,
+.slick-next {
+  background-color: black !important;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: black !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white !important;
+  font-size: 20px;
+}
+
+.slick-next {
+  right: 13px;
+}
+
+{% endstyle %}
+<div class="page-width">
+<div class="productcarsoul">
+  <ul class="product-slider">
+    {%- for product in collection.products -%}
+      <li
+        class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+          style="--animation-order: {{ forloop.index }};"
+        {% endif %}
+      >
+        {% render 'card-product',
+          card_product: product,
+          media_aspect_ratio: section.settings.image_ratio,
+          image_shape: section.settings.image_shape,
+          show_secondary_image: section.settings.show_secondary_image,
+          show_vendor: section.settings.show_vendor,
+          show_rating: section.settings.show_rating,
+          lazy_load: forloop.index > 2,
+          skip_styles: skip_card_product_styles,
+          quick_add: section.settings.quick_add,
+          section_id: section.id
+        %}
+      </li>
+      {%- assign skip_card_product_styles = true -%}
+    {%- endfor -%}
+  </ul>
+</div>
+  </div>
+<script>
+
+$('.productcarsoul').slick({
+  dots: false,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 4, // Show 4 products in one row
+  slidesToScroll: 4, // Scroll 4 at a time
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
+});
+
+</script>
+
+
+
+{% schema %}
+{
+  "name": "product carousel",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.featured-collection.settings.title.default",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    
+  ],
+  "presets": [
+    {
+      "name": "product carousel"
+    }
+  ]
+}
+{% endschema %}

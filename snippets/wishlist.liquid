@@ -1,0 +1,37 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<style>
+  .btnwish{
+    align:center;
+    background:gray;
+    border:2px solid white;
+    padding-left:2px;
+    margin-left:34px;
+    width:123px;
+    height:29px;
+    border-radius: 5px;
+    
+  }
+ .btnwish:hover {
+  background: skyblue;
+}
+</style>
+<button id="wishlist-{{ productId }}" class="btnwish"> ❤ Wishlist</button>
+<script>
+  $(document).ready(function() {
+    $('#wishlist-{{ productId }}').click(function() {
+     let wishId = '{{ productId }}';
+      localStorage.setItem('wishlist-{{ productId }}', wishId); 
+      
+        setTimeout(() => {
+         let wishshow = localStorage.setItem('wishlist-{{ productId }}');
+       if(wishshow == wishId )
+       {
+         $(this).addClass('wishbtn');
+       }
+        }, "1000");
+    });
+  });
+</script>
+
+

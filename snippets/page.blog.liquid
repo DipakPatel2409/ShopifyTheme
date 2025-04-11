@@ -1,0 +1,78 @@
+<ul>
+  {% for blog in blogs %}
+    <li>{{ blog.title }}</li>
+  {% endfor %}
+</ul>
+{% assign blog_handle = 'news' %}  <!-- Change 'news' to your blog's handle -->
+
+<h1>Our Blog</h1>
+
+<!-- Get All Unique Tags -->
+{% assign tags = '' %}
+{% for article in blogs[blog_handle].articles %}
+  {% for tag in article.tags %}
+    {% unless tags contains tag %}
+      {% assign tags = tags | append: tag | append: ',' %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign tags_array = tags | split: ',' %}
+
+<!-- Filter Dropdown -->
+<label for="blog-filter">Filter by Category:</label>
+<select id="blog-filter">
+
+   <option value="{{ blog.title }}">{{ blog.title }}</option>
+  {% for tag in tags_array %}
+   
+    {% unless tag == '' %}
+      
+    {% endunless %}
+  {% endfor %}
+ 
+</select>
+
+<!-- Blog Articles List -->
+<div id="blog-articles">
+  {% for article in blogs[blog_handle].articles %}
+    <div class="blog-post" data-tags="{{ article.tags | join: ' ' }}">
+      <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+      <p>{{ article.published_at | date: "%B %d, %Y" }}</p>
+      <p>{{ article.excerpt | strip_html | truncate: 150 }}</p>
+      <p><strong>Tags:</strong> {{ article.tags | join: ', ' }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- JavaScript for Filtering -->
+<script>
+  document.getElementById("blog-filter").addEventListener("change", function () {
+    let selectedTag = this.value;
+    let blogPosts = document.querySelectorAll(".blog-post"); // Ensure your blog posts have this class
+
+    blogPosts.forEach(post => {
+      let postTags = post.getAttribute("data-tags").split(",");
+
+      if (selectedTag === "all" || postTags.includes(selectedTag)) {
+        post.style.display = "block";
+      } else {
+        post.style.display = "none";
+      }
+    });
+  });
+</script>
+<style>
+  .blog-post {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+.blog-post h2 a {
+  text-decoration: none;
+  color: #333;
+}
+#blog-filter {
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+</style>

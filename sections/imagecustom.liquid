@@ -1,0 +1,74 @@
+{% schema %}
+{
+  "name": "Custom Image Section",
+  "blocks": [
+    {
+      "type": "image_block",
+      "name": "Image Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Enter your title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image Section",
+      "blocks": [
+        {
+          "type": "image_block"
+        },
+        {
+          "type": "image_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-section">
+  {% for block in section.blocks %}
+    <div class="custom-block">
+      {% if block.settings.image != blank %}
+        <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.title }}">
+      {% endif %}
+      <h2>{{ block.settings.title }}</h2>
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .custom-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .custom-block {
+    text-align: center;
+    max-width: 300px;
+  }
+
+  .custom-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .custom-block h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+  }
+</style>

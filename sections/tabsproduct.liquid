@@ -1,0 +1,168 @@
+<!-- tabs-collections.liquid -->
+<div class="p-8 text-center" style="
+    padding-left: 422px;
+">
+  
+  <h2 class="text-3xl font-bold mb-6" style="padding-left: 309px;">{{ section.settings.heading }}</h2>
+
+  <!-- Tabs -->
+  <div class="flex justify-center space-x-4 m mb-6" style="padding-left: 310px;margin-bottom: 31px;">
+    {% for block in section.blocks %}
+      <button class="tab-link {% if forloop.first %}active-tab{% endif %}" data-tab="{{ block.id }}">{{ block.settings.tab_label }}</button>
+    {% endfor %}
+  </div>
+  <!-- Product containers for each tab -->
+  {% for block in section.blocks %}
+    <div id="{{ block.id }}" class="tab-content {% if forloop.first %}active-tab-content{% else %}hidden{% endif %}">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+        {% assign collection_handle = block.settings.collection %}
+        {% if collections[collection_handle] != blank %}
+          {% paginate collections[collection_handle].products by 3 %}
+            {% for product in collections[collection_handle].products %}
+              <div class="p-4 border rounded-lg text-center">
+                <a href="{{ product.url }}">
+                  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="mx-auto">
+                  <h3 class="mt-2 font-semibold">{{ product.title }}</h3>
+                  <p class="mt-1">{{ product.price | money }}</p>
+                </a>
+              </div>
+            {% endfor %}
+
+            <!-- Pagination Controls -->
+           <div class="mt-6">
+               <div class="flex justify-center space-x-4">
+                {% if paginate.previous %}
+                  <a href="{{ paginate.previous.url }}" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Previous</a>
+                {% endif %}
+
+                {% if paginate.next %}
+                  <a href="{{ paginate.next.url }}" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next</a>
+                {% endif %}
+              </div>
+            </div>
+           
+          {% endpaginate %}
+        {% else %}
+          <p>No products found in this collection.</p>
+        {% endif %}
+        
+      </div>
+    </div>
+     
+  {% endfor %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab-link');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // Remove active classes
+      tabs.forEach(t => t.classList.remove('active-tab'));
+      contents.forEach(c => c.classList.add('hidden'));
+
+      // Add active class to clicked tab and show corresponding content
+      tab.classList.add('active-tab');
+      document.getElementById(tab.getAttribute('data-tab')).classList.remove('hidden');
+    });
+  });
+});
+</script>
+<style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  .tab-link {
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: 500;
+    text-gray-700;
+    background-color:gray;
+    transition: color 0.3s ease-in-out;
+  }
+  .mx-auto{
+    width: 285px;
+    height: 200px;
+    border-radius: 15px;
+  }
+
+  .tab-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba(59, 130, 246, 1); /* Blue underline */
+    
+  }
+
+  .tab-link:hover {
+    color: rgba(59, 130, 246, 1); /* Blue hover effect */
+  }
+
+  .tab-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .active-tab {
+    font-weight: bold;
+    color: white;
+  }
+
+  .active-tab::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .active-tab-content {
+    display: block;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Tab Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Our Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_label",
+          "label": "Tab Label",
+          "default": "Tab 1"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab Collections",
+      "category": "Featured"
+    }
+  ]
+}
+{% endschema %}

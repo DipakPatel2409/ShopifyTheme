@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Employee Details</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-container {
+            width: 45%;
+        }
+        .output-container {
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 200px;
+        }
+    </style>
+    <script>
+        function displayData(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get form values
+            let fname = document.getElementById("fname").value;
+            let lname = document.getElementById("lname").value;
+            let gender = document.querySelector('input[name="Gender"]:checked');
+            let empID = document.getElementById("empID").value;
+            let designation = document.getElementById("designation").value;
+            let phone = document.getElementById("phone").value;
+            
+            // Display values
+            document.getElementById("output").innerHTML =
+                `<h3>Entered Employee Details</h3>
+                <p><strong>First Name:</strong> ${fname}</p>
+                <p><strong>Last Name:</strong> ${lname}</p>
+                <p><strong>Gender:</strong> ${gender ? gender.value : 'Not selected'}</p>
+                <p><strong>Employee ID:</strong> ${empID}</p>
+                <p><strong>Designation:</strong> ${designation}</p>
+                <p><strong>Phone Number:</strong> ${phone}</p>`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form onsubmit="displayData(event)">
+                <fieldset>
+                    <legend>Employee Details</legend>
+                    <p>First name: <input type="text" id="fname" name="fname" required /></p>
+                    <p>Last name: <input type="text" id="lname" name="lname" required /></p>
+                    <p>
+                        <input type="radio" name="Gender" value="Male"> Male
+                        <input type="radio" name="Gender" value="Female"> Female
+                    </p>
+                    <p>Employee ID: <input type="text" id="empID" name="empID" required /></p>
+                    <p>Designation: <input type="text" id="designation" name="designation" required /></p>
+                    <p>Phone Number: <input type="text" id="phone" name="phone" required /></p>
+                    <p><input type="submit" name="submit" value="Submit" /></p>
+                </fieldset>
+            </form>
+        </div>
+        <div class="output-container" id="output"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% form 'contact' %}
+
+  <h2>Contact Us</h2>
+
+  {% if form.posted_successfully? %}
+    <p class="success-message">Thank you for reaching out! We’ll get back to you soon.</p>
+  {% endif %}
+
+  {% if form.errors %}
+    <div class="error-message">
+      <p>Oops! There were some errors:</p>
+      <ul>
+        {% for field in form.errors %}
+          <li>{{ field }} - {{ form.errors.messages[field] }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  <label for="contact_name">Name</label>
+  <input type="text" name="contact[name]" id="contact_name" required>
+
+  <label for="contact_email">Email</label>
+  <input type="email" name="contact[email]" id="contact_email" required>
+
+  <label for="contact_phone">Phone</label>
+  <input type="tel" name="contact[phone]" id="contact_phone">
+
+  <label for="contact_subject">Subject</label>
+  <input type="text" name="contact[subject]" id="contact_subject">
+
+  <label for="contact_order_number">Order Number (if applicable)</label>
+  <input type="text" name="contact[order_number]" id="contact_order_number">
+
+  <label for="contact_message">Message</label>
+  <textarea name="contact[body]" id="contact_message" rows="5" required></textarea>
+
+  <label>
+    <input type="checkbox" name="contact[newsletter]" value="Yes">
+    Subscribe to our newsletter
+  </label>
+
+  <button type="submit">Send Message</button>
+
+{% endform %}

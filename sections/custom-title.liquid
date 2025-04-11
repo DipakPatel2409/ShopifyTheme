@@ -1,0 +1,105 @@
+{% schema %}
+{
+  "name": "Custom Section for Demo",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Welcome to Our Store"
+    },
+    {
+      "type": "textarea",
+      "id": "section_text",
+      "label": "Section Text",
+      "default": "This is a customizable section where you can showcase your content."
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Me"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link",
+          "default": "/"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Section1",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section style="background-color: {{ section.settings.background_color }};">
+  <div class="custom-section" style="color: {{ section.settings.text_color }};">
+    <h1>{{ section.settings.section_heading }}</h1>
+    <p>{{ section.settings.section_text }}</p>
+    {% if section.settings.section_image %}
+      <img src="{{ section.settings.section_image | img_url }}" alt="Custom Section Image">
+    {% endif %}
+    <div class="custom-buttons">
+      {% for block in section.blocks %}
+        {% if block.type == 'button' %}
+          <a href="{{ block.settings.button_link }}" class="btn">
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <style>
+    .custom-section {
+      text-align: center;
+      padding: 20px;
+    }
+    .custom-section img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+    }
+    .custom-buttons .btn {
+      display: inline-block;
+      background-color: {{ section.settings.text_color }};
+      color: {{ section.settings.background_color }};
+      padding: 10px 20px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .custom-buttons .btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</section>
