@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+    {% comment %}
 <div class="swiper-container">
     <div class="swiper-wrapper">
         {% for image in product.images %}
@@ -99,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
 </div>
-
+{% endcomment %}
     <script>
       document.addEventListener("DOMContentLoaded", function () {
   const menuItems = document.querySelectorAll(".header__menu-item");
