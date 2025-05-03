@@ -132,6 +132,7 @@
     "show_cart_note": true,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
+    "show_shipping_bar": true,
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
