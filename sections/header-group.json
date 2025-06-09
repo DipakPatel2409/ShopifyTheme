@@ -22,7 +22,7 @@
         "color_scheme": "scheme-3",
         "menu_color_scheme": "scheme-56a5366f-a811-4941-a6df-19277c390ae2",
         "enable_country_selector": false,
-        "enable_language_selector": true,
+        "enable_language_selector": false,
         "enable_customer_avatar": true,
         "mobile_logo_position": "center",
         "margin_bottom": 8,
